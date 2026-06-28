@@ -10,8 +10,8 @@ Text Domain: izzi-installation
 :root {
     --bg-dark: #0d0d0d;
     --bg-card: #1a1a1a;
-    --solar-orange: #ff6600;
-    --solar-glow: #ff8533;
+    --solar-gold: #d4af37;
+    --solar-glow: #f3d060;
     --text-white: #ffffff;
     --text-muted: #a6a6a6;
     --pure-white: #ffffff;
@@ -32,7 +32,7 @@ body {
 }
 
 a {
-    color: var(--solar-orange);
+    color: var(--solar-gold);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -44,7 +44,7 @@ a:hover {
 /* Header & Navigation */
 .site-header {
     background-color: rgba(13, 13, 13, 0.95);
-    border-bottom: 2px solid var(--solar-orange);
+    border-bottom: 2px solid var(--solar-gold);
     position: fixed;
     width: 100%;
     top: 0;
@@ -70,7 +70,7 @@ a:hover {
 }
 
 .logo span {
-    color: var(--solar-orange);
+    color: var(--solar-gold);
 }
 
 .main-nav ul {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 .main-nav a:hover {
-    color: var(--solar-orange);
+    color: var(--solar-gold);
 }
 
 /* Hero Section */
@@ -106,7 +106,7 @@ a:hover {
     right: 0;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255,102,0,0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%);
     pointer-events: none;
 }
 
@@ -125,7 +125,7 @@ a:hover {
 }
 
 .hero h1 span {
-    color: var(--solar-orange);
+    color: var(--solar-gold);
     display: block;
 }
 
@@ -137,21 +137,21 @@ a:hover {
 
 /* Call to Actions Buttons */
 .btn-primary {
-    background-color: var(--solar-orange);
+    background-color: var(--solar-gold);
     color: var(--pure-white);
     padding: 15px 35px;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 4px;
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 .btn-primary:hover {
     background-color: var(--solar-glow);
     color: var(--pure-white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.6);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
 }
 
 /* Grid Layouts */
@@ -168,7 +168,7 @@ a:hover {
 }
 
 .section-title span {
-    color: var(--solar-orange);
+    color: var(--solar-gold);
 }
 
 .grid-3 {
@@ -192,7 +192,7 @@ a:hover {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--solar-orange);
+    border-color: var(--solar-gold);
 }
 
 .card::before {
@@ -202,7 +202,7 @@ a:hover {
     left: 0;
     width: 4px;
     height: 100%;
-    background-color: var(--solar-orange);
+    background-color: var(--solar-gold);
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
@@ -261,7 +261,7 @@ a:hover {
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
-    border-color: var(--solar-orange);
+    border-color: var(--solar-gold);
 }
 
 /* Footer */
