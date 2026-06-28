@@ -1,0 +1,275 @@
+/*
+Theme Name: izzi installation Custom Theme
+Author: Custom Developer
+Description: A highly sophisticated, high-contrast theme designed for a premier solar installation business.
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: izzi-installation
+*/
+
+:root {
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+    --solar-orange: #ff6600;
+    --solar-glow: #ff8533;
+    --text-white: #ffffff;
+    --text-muted: #a6a6a6;
+    --pure-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--solar-orange);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--solar-glow);
+}
+
+/* Header & Navigation */
+.site-header {
+    background-color: rgba(13, 13, 13, 0.95);
+    border-bottom: 2px solid var(--solar-orange);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pure-white);
+}
+
+.logo span {
+    color: var(--solar-orange);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--text-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.main-nav a:hover {
+    color: var(--solar-orange);
+}
+
+/* Hero Section */
+.hero {
+    padding: 180px 20px 120px 20px;
+    background: linear-gradient(135deg, #0d0d0d 40%, #1a1a1a 100%);
+    position: relative;
+    text-align: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,102,0,0.15) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: var(--solar-orange);
+    display: block;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* Call to Actions Buttons */
+.btn-primary {
+    background-color: var(--solar-orange);
+    color: var(--pure-white);
+    padding: 15px 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--solar-glow);
+    color: var(--pure-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.6);
+}
+
+/* Grid Layouts */
+.section-padding {
+    padding: 100px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: var(--solar-orange);
+}
+
+.grid-3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cards (Services / Tech specs) */
+.card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--solar-orange);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--solar-orange);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: scaleY(1);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+/* Form Styling */
+.contact-section {
+    background-color: #111;
+    border-top: 1px solid #222;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-dark);
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    color: var(--text-white);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--solar-orange);
+}
+
+/* Footer */
+.site-footer {
+    background-color: #050505;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    color: var(--text-muted);
+    font-size: 14px;
+}
