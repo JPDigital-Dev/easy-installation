@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Savings Calculator | izzi installation</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html">izzi<span>.</span></a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="calculator.html" class="active">Savings Calculator</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Energy <span>Calculator</span></h1>
+            <p>Model your property's solar potential, battery requirements, and long-term financial returns instantly.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-page-section section-padding">
+        <div class="container">
+            <div class="calculator-large-grid">
+                <!-- Left: Inputs -->
+                <div class="calculator-panel card">
+                    <h2>Configure Your Profile</h2>
+                    
+                    <!-- Bill Input -->
+                    <div class="input-group">
+                        <div class="slider-header">
+                            <label for="bill-slider">Average Monthly Bill</label>
+                            <span class="slider-value">R <span id="bill-val-display">4,500</span></span>
+                        </div>
+                        <input type="range" id="bill-slider" min="1500" max="15000" step="500" value="4500" class="custom-slider">
+                        <div class="slider-labels">
+                            <span>R 1,500</span>
+                            <span>R 15,000+</span>
+                        </div>
+                    </div>
+
+                    <!-- Connection Type -->
+                    <div class="calculator-options-group">
+                        <label class="group-label">Connection Type</label>
+                        <div class="options-grid">
+                            <label class="option-button active">
+                                <input type="radio" name="phase" value="single" checked hidden>
+                                <span>Single Phase</span>
+                                <small>Standard Residential</small>
+                            </label>
+                            <label class="option-button">
+                                <input type="radio" name="phase" value="three" hidden>
+                                <span>Three Phase</span>
+                                <small>Large Home / Commercial</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Sun Exposure -->
+                    <div class="calculator-options-group">
+                        <label class="group-label">Roof Sun Exposure</label>
+                        <div class="options-grid grid-3-options">
+                            <label class="option-button active">
+                                <input type="radio" name="sun" value="optimal" checked hidden>
+                                <span>Optimal</span>
+                                <small>North-facing, no shade</small>
+                            </label>
+                            <label class="option-button">
+                                <input type="radio" name="sun" value="partial" hidden>
+                                <span>Partial</span>
+                                <small>East/West, minor shade</small>
+                            </label>
+                            <label class="option-button">
+                                <input type="radio" name="sun" value="poor" hidden>
+                                <span>Sub-optimal</span>
+                                <small>South-facing or shaded</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Battery Needs -->
+                    <div class="calculator-options-group">
+                        <label class="group-label">Battery Storage Level</label>
+                        <div class="options-grid grid-3-options">
+                            <label class="option-button active">
+                                <input type="radio" name="battery" value="full" checked hidden>
+                                <span>Essential + Heavy</span>
+                                <small>Full home backup</small>
+                            </label>
+                            <label class="option-button">
+                                <input type="radio" name="battery" value="critical" hidden>
+                                <span>Essential Only</span>
+                                <small>Lights, Wi-Fi & Fridge</small>
+                            </label>
+                            <label class="option-button">
+                                <input type="radio" name="battery" value="none" hidden>
+                                <span>No Battery</span>
+                                <small>Grid-tied solar only</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Results -->
+                <div class="calculator-results-panel">
+                    <div class="result-card highlight">
+                        <span class="result-label">Est. Monthly Savings</span>
+                        <span class="result-value">R <span id="savings-val">3,825</span></span>
+                        <span class="result-meta">Up to <span id="savings-pct">85</span>% reduction in your grid reliance</span>
+                    </div>
+
+                    <div class="calculator-specs-grid">
+                        <div class="result-card">
+                            <span class="result-label">Recommended Solar Array</span>
+                            <span class="result-value-small"><span id="system-size">5.0</span> kWp</span>
+                            <span class="result-meta">Approx. <span id="panel-count">11</span> x 450W Panels</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Battery Storage Capacity</span>
+                            <span class="result-value-small"><span id="battery-size">10.0</span> kWh</span>
+                            <span class="result-meta">Lithium Iron Phosphate</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Recommended Inverter</span>
+                            <span class="result-value-small"><span id="inverter-size">8.0</span> kW</span>
+                            <span class="result-meta">Smart Hybrid Inverter</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Estimated Payback Period</span>
+                            <span class="result-value-small"><span id="payback-years">4.8</span> Years</span>
+                            <span class="result-meta">Payback / ROI Period</span>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Savings Graph (Pure CSS/JS) -->
+                    <div class="result-card graph-card">
+                        <h3>Projected Cumulative Savings</h3>
+                        <div class="graph-container">
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar" id="bar-5" style="height: 20%;">
+                                    <span class="bar-value">R 229k</span>
+                                </div>
+                                <span class="bar-label">5 Years</span>
+                            </div>
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar" id="bar-10" style="height: 40%;">
+                                    <span class="bar-value">R 459k</span>
+                                </div>
+                                <span class="bar-label">10 Years</span>
+                            </div>
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar" id="bar-15" style="height: 60%;">
+                                    <span class="bar-value">R 688k</span>
+                                </div>
+                                <span class="bar-label">15 Years</span>
+                            </div>
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar" id="bar-25" style="height: 100%;">
+                                    <span class="bar-value">R 1.1M</span>
+                                </div>
+                                <span class="bar-label">25 Years</span>
+                            </div>
+                        </div>
+                        <p class="graph-note">*Assumes an average annual grid tariff increase of 10%.</p>
+                    </div>
+
+                    <!-- Action Button -->
+                    <a href="#quote-submission" class="btn-primary full-width-btn" id="send-config-btn">Submit Configuration For Engineering Review</a>
+                </div>
+            </div>
+            
+            <!-- Hidden Quote submission anchor -->
+            <div id="quote-submission" class="quote-submission-section" style="display:none; margin-top: 60px;">
+                <div class="form-container">
+                    <h2>Send Config to Engineering</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">Provide your details below, and we will turn your calculated configuration into a formal, itemized engineering proposal.</p>
+                    <form onsubmit="event.preventDefault(); alert('Your custom configuration and contact details have been successfully logged! Our engineering team will review it and send a formal proposal within 24 hours.');">
+                        <div class="form-group">
+                            <label>Your Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Secure Contact Email</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+27 82 123 4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Calculated Configuration Summary</label>
+                            <textarea id="config-summary" rows="4" readonly></textarea>
+                        </div>
+                        <button class="btn-primary" type="submit" style="width:100%;">Request Formal Engineering Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 izzi installation. Engineered for Maximum Efficiency.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calculator Javascript -->
+    <script>
+        const billSlider = document.getElementById('bill-slider');
+        const billValDisplay = document.getElementById('bill-val-display');
+        const savingsVal = document.getElementById('savings-val');
+        const savingsPct = document.getElementById('savings-pct');
+        const systemSize = document.getElementById('system-size');
+        const panelCount = document.getElementById('panel-count');
+        const batterySize = document.getElementById('battery-size');
+        const inverterSize = document.getElementById('inverter-size');
+        const paybackYears = document.getElementById('payback-years');
+        
+        // Graph elements
+        const bar5 = document.getElementById('bar-5');
+        const bar10 = document.getElementById('bar-10');
+        const bar15 = document.getElementById('bar-15');
+        const bar25 = document.getElementById('bar-25');
+
+        // Form elements
+        const sendConfigBtn = document.getElementById('send-config-btn');
+        const quoteSubmission = document.getElementById('quote-submission');
+        const configSummary = document.getElementById('config-summary');
+
+        // Radio button option handlers
+        const optionButtons = document.querySelectorAll('.option-button');
+        optionButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const radio = button.querySelector('input[type="radio"]');
+                const name = radio.name;
+                
+                // Remove active class from siblings
+                document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                    r.closest('.option-button').classList.remove('active');
+                });
+                
+                // Add active class and check radio
+                button.classList.add('active');
+                radio.checked = true;
+                
+                calculateSolar();
+            });
+        });
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function formatShortNumber(num) {
+            if (num >= 1000000) {
+                return 'R ' + (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return 'R ' + Math.round(num / 1000) + 'k';
+            }
+            return 'R ' + num;
+        }
+
+        function calculateSolar() {
+            const bill = parseInt(billSlider.value);
+            billValDisplay.textContent = formatNumber(bill);
+
+            // Get options
+            const phase = document.querySelector('input[name="phase"]:checked').value;
+            const sun = document.querySelector('input[name="sun"]:checked').value;
+            const batteryLevel = document.querySelector('input[name="battery"]:checked').value;
+
+            // 1. Calculate savings percentage based on sun exposure and battery backup
+            let baseSavingsPct = 0.85; // Optimal
+            if (sun === 'partial') baseSavingsPct = 0.70;
+            if (sun === 'poor') baseSavingsPct = 0.50;
+
+            // If no battery, savings drop because they can't use solar power at night
+            if (batteryLevel === 'none') {
+                baseSavingsPct = baseSavingsPct * 0.5;
+            } else if (batteryLevel === 'critical') {
+                baseSavingsPct = baseSavingsPct * 0.85;
+            }
+
+            const savingsPercent = Math.round(baseSavingsPct * 100);
+            savingsPct.textContent = savingsPercent;
+
+            const monthlySavings = Math.round(bill * baseSavingsPct);
+            savingsVal.textContent = formatNumber(monthlySavings);
+
+            // 2. Solar array size (kWp)
+            // Baseline: R1500 monthly bill needs approx 1.2kWp of solar
+            let kwpFactor = 1250;
+            if (sun === 'partial') kwpFactor = 1000; // Need more panels for same bill if partial shade
+            if (sun === 'poor') kwpFactor = 750; // Need even more panels if poor sun
+            
+            let kwpNeeded = parseFloat((bill / kwpFactor).toFixed(1));
+            if (kwpNeeded < 1.5) kwpNeeded = 1.5;
+            systemSize.textContent = kwpNeeded.toFixed(1);
+            
+            const panels = Math.ceil((kwpNeeded * 1000) / 450);
+            panelCount.textContent = panels;
+
+            // 3. Battery storage capacity (kWh)
+            let kwhNeeded = 0;
+            if (batteryLevel === 'full') {
+                kwhNeeded = parseFloat((kwpNeeded * 2.0).toFixed(1)); // 2x solar capacity
+            } else if (batteryLevel === 'critical') {
+                kwhNeeded = parseFloat((kwpNeeded * 1.0).toFixed(1)); // 1x solar capacity
+            }
+            batterySize.textContent = kwhNeeded.toFixed(1);
+
+            // 4. Inverter capacity
+            let inverterKw = 5.0;
+            if (phase === 'three') {
+                inverterKw = kwpNeeded > 10 ? 12.0 : 8.0;
+            } else {
+                inverterKw = kwpNeeded > 6 ? 8.0 : 5.0;
+            }
+            inverterSize.textContent = inverterKw.toFixed(1);
+
+            // 5. Payback / ROI
+            // Approx cost metrics: 
+            // Inverter: 5kW = R18000, 8kW = R25000, 12kW = R35000
+            // Panels: R2500 per panel (including racking)
+            // Battery: R6500 per kWh
+            // Installation & Compliance: R15000 (single) or R25000 (three)
+            let inverterCost = inverterKw === 5.0 ? 18000 : (inverterKw === 8.0 ? 25000 : 35000);
+            let panelsCost = panels * 2500;
+            let batteryCost = kwhNeeded * 6500;
+            let installCost = phase === 'three' ? 25000 : 15000;
+            const systemCost = inverterCost + panelsCost + batteryCost + installCost;
+
+            const annualSavings = monthlySavings * 12;
+            const payback = parseFloat((systemCost / annualSavings).toFixed(1));
+            paybackYears.textContent = payback;
+
+            // 6. Cumulative Savings calculations (compounding at 10% tariff increase annually)
+            let totalSaved = 0;
+            let currentAnnualSavings = annualSavings;
+            let saved5 = 0, saved10 = 0, saved15 = 0, saved25 = 0;
+
+            for (let yr = 1; yr <= 25; yr++) {
+                totalSaved += currentAnnualSavings;
+                currentAnnualSavings = currentAnnualSavings * 1.10; // 10% tariff hike
+                if (yr === 5) saved5 = Math.round(totalSaved);
+                if (yr === 10) saved10 = Math.round(totalSaved);
+                if (yr === 15) saved15 = Math.round(totalSaved);
+                if (yr === 25) saved25 = Math.round(totalSaved);
+            }
+
+            // Update graph bars
+            const maxVal = saved25;
+            bar5.style.height = (saved5 / maxVal * 100) + '%';
+            bar5.querySelector('.bar-value').textContent = formatShortNumber(saved5);
+
+            bar10.style.height = (saved10 / maxVal * 100) + '%';
+            bar10.querySelector('.bar-value').textContent = formatShortNumber(saved10);
+
+            bar15.style.height = (saved15 / maxVal * 100) + '%';
+            bar15.querySelector('.bar-value').textContent = formatShortNumber(saved15);
+
+            bar25.style.height = '100%';
+            bar25.querySelector('.bar-value').textContent = formatShortNumber(saved25);
+
+            // Update the form config text
+            configSummary.value = `Monthly Bill: R ${formatNumber(bill)}\nRecommended Solar Array: ${kwpNeeded.toFixed(1)} kWp (${panels} Panels)\nRecommended Battery: ${kwhNeeded.toFixed(1)} kWh\nInverter Size: ${inverterKw.toFixed(1)} kW (${phase === 'three' ? 'Three Phase' : 'Single Phase'})\nEstimated Payback: ${payback} Years\nEstimated Monthly Savings: R ${formatNumber(monthlySavings)} (${savingsPercent}%)`;
+        }
+
+        billSlider.addEventListener('input', calculateSolar);
+        
+        // Show submission form on button click
+        sendConfigBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            quoteSubmission.style.display = 'block';
+            
+            // Smooth scroll to the form
+            quoteSubmission.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Run initial calculation
+        calculateSolar();
+    </script>
+</body>
+</html>
