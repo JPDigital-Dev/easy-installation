@@ -1,55 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>izzi installation</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>izzi installation | Premium Solar & Energy Storage</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-<div class="header-container">
-<div class="logo"><a href="#">izzi<span>.</span></a></div>
-<nav class="main-nav">
-<ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="#">izzi<span>.</span></a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#calculator">Savings Calculator</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Smart Energy.<span>Flawless Installation.</span></h1>
-<p>Cut the grid dependency. izzi installation deploys high-tier premium solar solutions designed for absolute performance and long-range resilience.</p>
-<a href="#contact" class="btn-primary">Get a Premium Quote</a>
-</div>
-</section>
+    <!-- Hero Section (Split Layout) -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Smart Energy.<span>Flawless Installation.</span></h1>
+                <p>Cut the grid dependency. izzi installation deploys high-tier premium solar solutions designed for absolute performance and long-range resilience.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Get a Premium Quote</a>
+                    <a href="#calculator" class="btn-secondary">Calculate Savings</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image-wrapper">
+                    <img src="assets/hero_solar.png" alt="Sleek Modern Solar Villa" class="hero-image">
+                    <div class="hero-badge">
+                        <span class="badge-number">98%</span>
+                        <span class="badge-text">Average Grid Independence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="services" class="section-padding">
-<h2 class="section-title">What We <span>Deploy</span></h2>
-<div class="grid-3">
-<div class="card"><h3>Residential Solar</h3><p>Seamless, aesthetically sharp setups tailored for uninterrupted home energy production.</p></div>
-<div class="card"><h3>Commercial Solutions</h3><p>High-yield infrastructure built to scale while reducing dependence on the grid.</p></div>
-<div class="card"><h3>Backup Ecosystems</h3><p>Advanced inverter arrays and battery systems for uninterrupted power.</p></div>
-</div>
-</section>
+    <!-- Interactive Solar Savings Calculator -->
+    <section id="calculator" class="section-padding calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calculate Your <span>Savings</span></h2>
+                <p class="section-subtitle">Slide to your average monthly electricity bill and see what a premium solar setup can do.</p>
+            </div>
+            
+            <div class="calculator-grid">
+                <div class="calculator-inputs card">
+                    <h3>Configure Your Profile</h3>
+                    <div class="input-group">
+                        <div class="slider-header">
+                            <label for="bill-slider">Monthly Electricity Bill</label>
+                            <span class="slider-value">R <span id="bill-val-display">4,500</span></span>
+                        </div>
+                        <input type="range" id="bill-slider" min="1500" max="15000" step="500" value="4500" class="custom-slider">
+                        <div class="slider-labels">
+                            <span>R 1,500</span>
+                            <span>R 15,000+</span>
+                        </div>
+                    </div>
+                    <div class="calculator-note">
+                        <p>*Calculations are estimates based on current tariff rates and optimal solar exposure.</p>
+                    </div>
+                </div>
 
-<section id="contact" class="section-padding contact-section">
-<h2 class="section-title">Initiate Your <span>Switch</span></h2>
-<div class="form-container">
-<form onsubmit="event.preventDefault();alert('Thank you! This demo form is static. Connect Formspree, Basin or Netlify Forms for production.');">
-<div class="form-group"><label>Name</label><input required></div>
-<div class="form-group"><label>Email</label><input type="email" required></div>
-<div class="form-group"><label>Requirements</label><textarea rows="5" required></textarea></div>
-<button class="btn-primary" type="submit">Analyze My Property</button>
-</form>
-</div>
-</section>
+                <div class="calculator-results">
+                    <div class="result-card highlight">
+                        <span class="result-label">Est. Monthly Savings</span>
+                        <span class="result-value">R <span id="savings-val">3,825</span></span>
+                        <span class="result-meta">Up to 85% reduction</span>
+                    </div>
+                    <div class="result-sub-grid">
+                        <div class="result-card">
+                            <span class="result-label">Recommended System</span>
+                            <span class="result-value-small"><span id="system-size">5.0</span> kWp</span>
+                            <span class="result-meta">Solar Array</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-label">Storage Capacity</span>
+                            <span class="result-value-small"><span id="battery-size">10.0</span> kWh</span>
+                            <span class="result-meta">Lithium Backup</span>
+                        </div>
+                        <div class="result-card full-width">
+                            <span class="result-label">Estimated Payback Period</span>
+                            <span class="result-value-small"><span id="payback-years">4.8</span> Years</span>
+                            <span class="result-meta">Return on Investment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="site-footer">
-<p>&copy; 2026 izzi installation. Engineered for Maximum Efficiency.</p>
-</footer>
+    <!-- Services / Hardware Showcase -->
+    <section id="services" class="section-padding services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We <span>Deploy</span></h2>
+                <p class="section-subtitle">Engineered for maximum efficiency, using only Tier-1 components and certified installation standards.</p>
+            </div>
+            <div class="grid-3">
+                <!-- Service 1 -->
+                <div class="card service-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/residential_solar.png" alt="Residential Solar" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3>Residential Solar</h3>
+                        <p>Seamless, aesthetically sharp setups tailored for uninterrupted home energy production. Full battery integration configurations included.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="card service-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/commercial_solar.png" alt="Commercial Solar" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3>Commercial Solutions</h3>
+                        <p>High-yield industrial infrastructure built to scale. Minimize overhead operational costs with extreme grid independence panels.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="card service-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/battery_backup.png" alt="Battery Backup" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3>Backup Ecosystems</h3>
+                        <p>Advanced inverter arrays and reliable off-grid engineering designed to kick in during unexpected power system drops instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- "Our Process" Timeline Section -->
+    <section id="process" class="section-padding process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Process</span></h2>
+                <p class="section-subtitle">Four steps to absolute energy independence and peace of mind.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Consultation & Audit</h3>
+                        <p>We analyze your historical energy bill, conduct a roof structural assessment, and map solar irradiance using drone photography.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Custom Engineering</h3>
+                        <p>Our engineers design a bespoke electrical schematic optimized for your specific load profile, ensuring zero power clipping.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Precision Deployment</h3>
+                        <p>Our certified teams complete the installation in 1-2 days, adhering to strict safety codes and premium cable routing aesthetics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>Smart Monitoring</h3>
+                        <p>We configure real-time cloud-based monitoring on your phone so you can track generation, storage, and savings on the fly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="section-padding faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+                <p class="section-subtitle">Everything you need to know about transitioning to premium solar power.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does the installation process take?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For standard residential systems, physical installation takes 1 to 2 days. The engineering design phase takes about 3-5 days prior, and municipal approval timelines vary depending on your local grid authority.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will my system keep running during power grid failures?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. If your system includes a hybrid inverter and battery backup (our standard deployment), the system will switch to battery power within 10 milliseconds of a grid failure, ensuring your lights, internet, and appliances stay on without interruption.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What warranties are provided on the hardware?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We source only Tier-1 equipment: Solar panels come with a 25-year linear output warranty, hybrid inverters carry a 5 to 10-year warranty, and lithium batteries feature a 10-year (or 6,000 cycle) warranty. We also provide a 2-year warranty on our installation workmanship.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How much maintenance do solar panels require?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Very little. Because there are no moving parts, maintenance is minimal. We recommend a gentle wash of the panels every 6 months to remove dust or leaves, which ensures they continue operating at peak efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Initiate Your <span>Switch</span></h2>
+                <p class="section-subtitle">Fill out the form below, and our engineering team will compile a customized solar design proposal for your property.</p>
+            </div>
+            <div class="form-container">
+                <form onsubmit="event.preventDefault(); alert('Thank you! Your custom energy profile request has been received. Our engineering team will contact you shortly.');">
+                    <div class="form-group">
+                        <label for="client-name">Your Full Name</label>
+                        <input id="client-name" type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Secure Contact Email</label>
+                        <input id="client-email" type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-phone">Phone Number</label>
+                        <input id="client-phone" type="tel" placeholder="+27 82 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-message">Property Energy Requirements</label>
+                        <textarea id="client-message" rows="5" placeholder="Tell us about your current monthly power bill, property type, or specific backup needs..." required></textarea>
+                    </div>
+                    <button class="btn-primary form-submit-btn" type="submit">Analyze My Property</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 izzi installation. Engineered for Maximum Efficiency.</p>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#calculator">Calculator</a>
+                <a href="#process">Process</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Components -->
+    <script>
+        // --- Savings Calculator Logic ---
+        const billSlider = document.getElementById('bill-slider');
+        const billValDisplay = document.getElementById('bill-val-display');
+        const savingsVal = document.getElementById('savings-val');
+        const systemSize = document.getElementById('system-size');
+        const batterySize = document.getElementById('battery-size');
+        const paybackYears = document.getElementById('payback-years');
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function calculateSolar() {
+            const bill = parseInt(billSlider.value);
+            
+            // Display current bill
+            billValDisplay.textContent = formatNumber(bill);
+
+            // 1. Est. Monthly Savings (approx 85% of bill)
+            const savings = Math.round(bill * 0.85);
+            savingsVal.textContent = formatNumber(savings);
+
+            // 2. Recommended System Size (kWp)
+            // Roughly: R1500 bill = 1.5kWp system
+            const kWp = (bill / 900).toFixed(1);
+            systemSize.textContent = kWp;
+
+            // 3. Storage Capacity (kWh)
+            // Roughly: double the kWp for normal day/night backup ratio
+            const kWh = (kWp * 2).toFixed(1);
+            batterySize.textContent = kWh;
+
+            // 4. Payback Period (years)
+            // Est. System Cost: R16,500 per kWp + R11,000 per kWh of battery
+            const systemCost = (parseFloat(kWp) * 16500) + (parseFloat(kWh) * 11000);
+            const annualSavings = savings * 12;
+            const payback = (systemCost / annualSavings).toFixed(1);
+            paybackYears.textContent = payback;
+        }
+
+        billSlider.addEventListener('input', calculateSolar);
+        // Run initial calculation
+        calculateSolar();
+
+
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-icon').textContent = '+';
+                });
+
+                // Toggle current item
+                if (!isOpen) {
+                    item.classList.add('active');
+                    item.querySelector('.faq-icon').textContent = '−';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
